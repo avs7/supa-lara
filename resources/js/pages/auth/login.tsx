@@ -94,6 +94,10 @@ export default function Login({ status, canResetPassword }: LoginProps) {
                         {processing && <LoaderCircle className="h-4 w-4 animate-spin" />}
                         Log in
                     </Button>
+                    {/* temporary Google login button */}
+                    <Button variant="outline" className="mt-4 w-full" tabIndex={4} onClick={() => (window.location.href = route('auth.google'))}>
+                        Continue with Google
+                    </Button>
                 </div>
 
                 <div className="text-muted-foreground text-center text-sm">
