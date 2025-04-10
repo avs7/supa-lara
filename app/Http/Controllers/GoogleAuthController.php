@@ -27,6 +27,10 @@ class GoogleAuthController extends Controller
                 ]
             );
 
+            if (!$user->hasAnyRole()) {
+                $user->assignRole('standard');
+            }
+
             Auth::login($user);
 
             return redirect()->route('dashboard');
